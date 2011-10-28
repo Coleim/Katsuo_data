@@ -1,0 +1,32 @@
+** Module chargement des données **
+
+  Récupère les données des fichiers pour les années voulues et les charge en db pour une utilisation ultérieure lors de la simulation.
+
+** Module Simulation **
+
+  Démarrer avec : - Fichier .bon (possibilité de les placer à la main avec un éditeur/créateur de .bon) 
+  
+  Pour chaque "point bonite", lancer beaucoup (1M) d'instances de ce point et les simuler (1 Thread par point Bonite? => Multithread peut ammener à un calcul sur grille).
+
+  * 2 cas:  - Quelques points bonite (1,2 ou 3), avec 1M d'instances
+            - Beaucoup de points Bonite, 1 instance, simu répétée 1M de fois.
+
+  En sortie, la simulation donne un fichier avec les positions des bonites au cours du temps.
+  Format du style:
+    <time>:<BoniteId>-<lat>-<lon>-<weight>-<size>;<otherBonites>
+
+
+
+  Penser a sortir aussi un fichier de statistiques avec les comparaisons des points de départ, arrivée.
+  Voir ce qu'on veut que la simu montre comme résultats.
+
+
+** Module visualisation du résultat **
+
+  Ce programme lit les fichiers résultats de la simulation et les affiches. Cela permet d'avoir une visu des déplacements des bonites, sans faire tout ramer (pas trop).
+
+  - Pouvoir faire des pauses
+  - Revenir en arrière
+  - Selectionner un bonite et afficher les infos.
+
+(Peut etre pas possible sur des grosses simu)
